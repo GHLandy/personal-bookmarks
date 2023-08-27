@@ -26,6 +26,7 @@ const bookmarksComputed = computed(() => {
             </div>
           </template>
 
+          <el-icon :size="20"><ElIconPaperclip /></el-icon>
           <el-link :href="item.url" :title="item.url" target="_blank">
             {{ item.displayUrl }}
           </el-link>
@@ -38,6 +39,12 @@ const bookmarksComputed = computed(() => {
 </template>
 
 <style scoped lang="scss">
+:deep(.el-card__body) {
+  display: flex;
+  .el-icon {
+    margin-right: 5px;
+  }
+}
 .padding-10 {
   padding: 10px;
 }
