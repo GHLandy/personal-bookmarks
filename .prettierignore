@@ -1,0 +1,10 @@
+dist
+dist-ssr
+node_modules
+pnpm-lock.yaml
+.cache
+.husky
+.webpack
+out
+auto-imports.d.ts
+components.d.ts

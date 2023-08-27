@@ -1,0 +1,18 @@
+export const bookmarks = [
+  { name: 'Node.js 中文网', url: 'https://nodejs.cn' },
+  { name: 'TSConfig Reference', url: 'https://www.typescriptlang.org/tsconfig' },
+  { name: 'Axios', url: 'https://axios-http.com' },
+  { name: 'Pnpm', url: 'https://pnpm.io/zh' },
+  { name: 'Prettier', url: 'https://prettier.io' },
+  { name: 'Eslint', url: 'https://eslint.org/docs/latest/rules' },
+  { name: 'Vite', url: 'https://cn.vitejs.dev/config' },
+  { name: 'Vue 3', url: 'https://cn.vuejs.org' },
+  { name: 'Vue Router 4', url: 'https://router.vuejs.org/zh' },
+  { name: 'Element Plus', url: 'https://element-plus.org/zh-CN' },
+  { name: 'Vue 2', url: 'https://v2.cn.vuejs.org' },
+  { name: 'Vue Router 3', url: 'https://v3.router.vuejs.org/zh' },
+  { name: 'Element UI', url: 'https://element.eleme.cn' },
+  { name: 'NestJS Docs', url: 'https://docs.nestjs.com' },
+  { name: 'NestJS Docs CN', url: 'https://docs.nestjs.cn' },
+  { name: 'Prisma Docs', url: 'https://www.prisma.io/docs' },
+];
