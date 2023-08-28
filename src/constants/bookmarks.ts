@@ -1,7 +1,7 @@
 export const bookmarks = [
   { name: 'Node.js CN', url: 'https://nodejs.cn' },
   { name: 'TSConfig Reference', url: 'https://www.typescriptlang.org/tsconfig' },
-  { name: 'Axios', url: 'https://axios-http.com' },
+  { name: 'Axios', url: 'https://axios-http.com/zh' },
   { name: 'Pnpm', url: 'https://pnpm.io/zh' },
   { name: 'Prettier', url: 'https://prettier.io' },
   { name: 'Eslint', url: 'https://eslint.org/docs/latest/rules' },
