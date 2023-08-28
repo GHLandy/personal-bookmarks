@@ -1,40 +1,68 @@
 <script setup lang="ts">
 import { bookmarks } from '@/constants/bookmarks';
-import { computed, onMounted } from 'vue';
+import { computed, onMounted, ref } from 'vue';
+
+let filterText = ref('');
+
+const bookmarksComputed = computed(() => {
+  if (filterText.value) {
+    const regexp = new RegExp(`(${filterText.value})`, 'gi');
+    const filterTextLowerCase = filterText.value.toLowerCase();
+    return bookmarks
+      .filter(
+        (item) =>
+          item.name.toLocaleLowerCase().includes(filterTextLowerCase) ||
+          item.url.toLocaleLowerCase().includes(filterTextLowerCase),
+      )
+      .map((item) => {
+        return {
+          ...item,
+          displayName: item.name.replace(regexp, '<span class="matchText">$1</span>'),
+          displayUrl: item.url
+            .replace(/^https?:\/\/(.+)$/, '$1')
+            .replace(regexp, '<span class="matchText">$1</span>'),
+        };
+      });
+  }
+
+  return bookmarks.map((item) => {
+    return {
+      ...item,
+      displayName: item.name,
+      displayUrl: item.url.replace(/^https?:\/\/(.+)$/, '$1'),
+    };
+  });
+});
 
 onMounted(() => {
   console.log('%c 🌰 onMounted', 'color:#ea7e5c', import.meta.env);
-});
-
-const bookmarksComputed = computed(() => {
-  return bookmarks.map((item) => {
-    return { ...item, displayUrl: item.url.replace(/^https?:\/\/(.+)$/, '$1') };
-  });
 });
 </script>
 
 <template>
   <div class="padding-10">
+    <div style="text-align: center">
+      <el-input v-model.trim="filterText" placeholder="搜索" clearable size="large" />
+    </div>
+
     <div style="height: 5px; background-color: brown" />
 
     <div class="flex-container">
       <div v-for="item in bookmarksComputed" :key="item.url" class="flex-item">
         <el-card>
           <template #header>
-            <div>
-              {{ item.name }}
-            </div>
+            <div v-html="item.displayName" />
           </template>
 
           <el-icon :size="20"><ElIconPaperclip /></el-icon>
           <el-link :href="item.url" :title="item.url" target="_blank">
-            {{ item.displayUrl }}
+            <span v-html="item.displayUrl" />
           </el-link>
         </el-card>
       </div>
     </div>
 
-    <div style="height: 5px; background-color: brown" />
+    <div style="height: 5px; background-color: brown; margin-bottom: 15px" />
   </div>
 </template>
 
@@ -44,6 +72,14 @@ const bookmarksComputed = computed(() => {
   .el-icon {
     margin-right: 5px;
   }
+}
+:deep(.el-input) {
+  width: 80%;
+  max-width: 640px;
+  margin: 15px 0 20px;
+}
+:deep(.matchText) {
+  color: red;
 }
 .padding-10 {
   padding: 10px;
