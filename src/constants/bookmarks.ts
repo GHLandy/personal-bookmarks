@@ -1,6 +1,10 @@
 export const bookmarks = [
   { name: 'Node.js CN', url: 'https://nodejs.cn' },
   { name: 'TSConfig Reference', url: 'https://www.typescriptlang.org/tsconfig' },
+  {
+    name: 'MDN',
+    url: 'https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects',
+  },
   { name: 'Axios', url: 'https://axios-http.com/zh' },
   { name: 'Pnpm', url: 'https://pnpm.io/zh' },
   { name: 'Prettier', url: 'https://prettier.io' },
