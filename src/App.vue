@@ -40,9 +40,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="padding-10">
-    <div style="text-align: center">
-      <el-input v-model.trim="filterText" placeholder="搜索" clearable size="large" />
+  <div style="padding: 0 10px 10px">
+    <div style="padding: 20px; text-align: center">
+      <el-input v-model.trim="filterText" placeholder="搜索" clearable size="large">
+        <template #prefix>
+          <el-icon :size="20"><ElIconSearch /></el-icon>
+        </template>
+      </el-input>
     </div>
 
     <div style="height: 5px; background-color: brown" />
@@ -76,13 +80,24 @@ onMounted(() => {
 :deep(.el-input) {
   width: 80%;
   max-width: 640px;
-  margin: 15px 0 20px;
 }
 :deep(.matchText) {
   color: red;
 }
-.padding-10 {
-  padding: 10px;
+:deep(.el-link) {
+  // 25px 为 el-icon 的 size + margin
+  max-width: calc(100% - 25px);
+
+  .el-link__inner {
+    width: 100%;
+
+    span {
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
 }
 .flex-container {
   display: flex;

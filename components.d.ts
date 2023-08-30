@@ -10,6 +10,7 @@ declare module 'vue' {
     ElCard: typeof import('element-plus/es')['ElCard']
     ElIcon: typeof import('element-plus/es')['ElIcon']
     ElIconPaperclip: typeof import('@element-plus/icons-vue')['Paperclip']
+    ElIconSearch: typeof import('@element-plus/icons-vue')['Search']
     ElInput: typeof import('element-plus/es')['ElInput']
     ElLink: typeof import('element-plus/es')['ElLink']
     RouterLink: typeof import('vue-router')['RouterLink']
