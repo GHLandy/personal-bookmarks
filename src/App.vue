@@ -44,7 +44,7 @@ onMounted(() => {
     <div style="padding: 20px; text-align: center">
       <el-input v-model.trim="filterText" placeholder="搜索" clearable size="large">
         <template #prefix>
-          <el-icon :size="20"><ElIconSearch /></el-icon>
+          <el-icon :size="18"><ElIconSearch /></el-icon>
         </template>
       </el-input>
     </div>
@@ -58,7 +58,7 @@ onMounted(() => {
             <div v-html="item.displayName" />
           </template>
 
-          <el-icon :size="20"><ElIconPaperclip /></el-icon>
+          <el-icon :size="18"><ElIconPaperclip /></el-icon>
           <el-link :href="item.url" :title="item.url" target="_blank">
             <span v-html="item.displayUrl" />
           </el-link>
@@ -75,11 +75,12 @@ onMounted(() => {
   display: flex;
   .el-icon {
     margin-right: 5px;
+    color: var(--el-color-primary);
   }
 }
 :deep(.el-input) {
   width: 80%;
-  max-width: 640px;
+  max-width: 660px;
 }
 :deep(.matchText) {
   color: red;

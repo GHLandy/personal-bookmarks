@@ -2,6 +2,10 @@ export const bookmarks = [
   { name: 'Node.js CN', url: 'https://nodejs.cn' },
   { name: 'TSConfig Reference', url: 'https://www.typescriptlang.org/tsconfig' },
   {
+    name: 'JSDoc Reference',
+    url: 'https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html',
+  },
+  {
     name: 'MDN',
     url: 'https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects',
   },
