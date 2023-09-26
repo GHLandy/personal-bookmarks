@@ -27,4 +27,5 @@ export const bookmarks = [
   { name: 'NestJS Docs', url: 'https://docs.nestjs.com' },
   { name: 'NestJS Docs CN', url: 'https://docs.nestjs.cn' },
   { name: 'Prisma Docs', url: 'https://www.prisma.io/docs' },
+  { name: 'Next.js CN', url: 'https://www.nextjs.cn/' },
 ];
