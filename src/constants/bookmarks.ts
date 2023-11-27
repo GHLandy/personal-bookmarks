@@ -13,6 +13,8 @@ export const bookmarks = [
   { name: 'Pnpm', url: 'https://pnpm.io/zh' },
   { name: 'Prettier', url: 'https://prettier.io' },
   { name: 'Eslint', url: 'https://eslint.org/docs/latest/rules' },
+  { name: 'CryptoJS', url: 'https://www.npmjs.com/package/crypto-js' },
+  { name: 'JSEncrypt', url: 'https://www.npmjs.com/package/jsencrypt' },
   { name: 'Vite', url: 'https://cn.vitejs.dev/config' },
   { name: 'Vitest', url: 'https://cn.vitest.dev' },
   { name: 'Vue 3', url: 'https://cn.vuejs.org' },
@@ -28,4 +30,5 @@ export const bookmarks = [
   { name: 'NestJS Docs CN', url: 'https://docs.nestjs.cn' },
   { name: 'Prisma Docs', url: 'https://www.prisma.io/docs' },
   { name: 'Next.js CN', url: 'https://www.nextjs.cn/' },
+  { name: 'React 设计思想', url: 'https://github.com/camsong/react-basic' },
 ];
