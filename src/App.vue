@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { bookmarks } from '@/constants/bookmarks';
-import { computed, onMounted, ref } from 'vue';
 
 let filterText = ref('');
 

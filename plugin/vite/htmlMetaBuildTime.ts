@@ -1,9 +1,9 @@
-import dayjs from 'dayjs';
 import type { Plugin } from 'vite';
 
+import dayjs from 'dayjs';
+
 /**
- * 将 html 中 `<meta name="build-time" content="htmlMetaBuildTime" />` 的
- * htmlMetaBuildTime 替换为允许 serve、build 的时间
+ * 在 html 中插入一个名为 buildTime 标签，放置运行 serve、build 的时间
  */
 function htmlMetaBuildTime(): Plugin {
   const buildTime = dayjs().format('YYYY-MM-DD HH:mm:ss');
@@ -11,7 +11,16 @@ function htmlMetaBuildTime(): Plugin {
   return {
     name: 'html-meta-build-time',
     transformIndexHtml(html: string) {
-      return html.replace(/htmlMetaBuildTime/, buildTime);
+      return {
+        html,
+        tags: [
+          {
+            tag: 'meta',
+            attrs: { name: 'buildTime', content: buildTime },
+            injectTo: 'head',
+          },
+        ],
+      };
     },
   };
 }

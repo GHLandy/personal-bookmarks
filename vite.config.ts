@@ -2,10 +2,9 @@ import { fileURLToPath, URL } from 'node:url';
 
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
-import IconsResolver from 'unplugin-icons/resolver';
-import Icons from 'unplugin-icons/vite';
+import AutoImport from 'unplugin-auto-import/vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
-import components from 'unplugin-vue-components/vite';
+import Components from 'unplugin-vue-components/vite';
 import { defineConfig } from 'vite';
 
 import htmlMetaBuildTime from './plugin/vite/htmlMetaBuildTime';
@@ -18,12 +17,15 @@ export default defineConfig(({ mode, command }) => {
     plugins: [
       vue(),
       vueJsx(),
-      components({
-        /* 自动导入 ElementPlus, @element-plus/icons-vue */
-        /* 形如 <el-icon size="24"><ElIconUser /></el-icon> */
-        resolvers: [ElementPlusResolver(), IconsResolver()],
+      AutoImport({
+        imports: ['vue', 'vue-router'],
+        resolvers: [ElementPlusResolver()],
+        dts: './src/auto-imports.d.ts',
       }),
-      Icons(),
+      Components({
+        resolvers: [ElementPlusResolver()],
+        dts: './src/components.d.ts',
+      }),
       htmlMetaBuildTime(),
     ],
     resolve: {
